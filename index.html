@@ -206,15 +206,45 @@
   single-page front end built in Vite.</p>
 
   <p>Two repositories deployed independently, with requirements and architecture in a third
-  that both consume as a git submodule — one source of truth rather than copies that drift. A
-  Chrome extension pulls postings straight into it. The whole thing runs on a self-hosted
-  Debian machine, with work tracked in Jira.</p>
+  that both consume as a git submodule — one source of truth rather than copies that drift.
+  Two Chrome extensions sit alongside them: one scrapes a posting and files it, the other
+  marks an existing application closed in a single click. The whole thing runs on a
+  self-hosted Debian machine, with work tracked in Jira.</p>
 
   <p class="repos">
     <a href="https://github.com/nevans-job-tracker/job-tracker-backend">backend</a> &middot;
     <a href="https://github.com/nevans-job-tracker/job-tracker-frontend">frontend</a> &middot;
     <a href="https://github.com/nevans-job-tracker/job-tracker-docs">shared docs</a> &middot;
-    <a href="https://github.com/nevans-job-tracker/chrome-extension-job-tracker">extension</a>
+    <a href="https://github.com/nevans-job-tracker/chrome-extension-job-tracker">import extension</a> &middot;
+    <a href="https://github.com/nevans-job-tracker/chrome-extension-job-tracker-close-posting">close-posting extension</a>
+  </p>
+</div>
+
+<div class="project">
+  <h3>jira-cli — replacing a metered integration with 330 lines</h3>
+  <p class="kicker">A small tool that removed a subscription &middot; Python, zero dependencies</p>
+
+  <p>I was driving the Jira board for that project through Atlassian's hosted Rovo MCP server.
+  It worked, but it meters against Rovo credits and is not offered on the Free plan — so
+  keeping one integration alive meant paying for a tier I had no other use for. The REST API
+  underneath it is available on every plan, unmetered.</p>
+
+  <p>So I wrote about 330 lines of Python that talks to it directly: a single file, no
+  dependencies, any Python 3.9 or later. Two things turned out better rather than merely
+  cheaper. It runs anywhere there is a shell — a terminal, an editor, a CI job, more than one
+  AI coding agent — where an MCP server only works where it has been configured. And it can be
+  read, tested and changed, which a hosted service cannot.</p>
+
+  <p>Having no dependencies is a working decision rather than an aesthetic one: a tool you
+  reach for every few weeks is one whose dependencies rot between uses, and the first run after
+  six months should not begin with a resolver error. <code>transition</code> takes a status
+  name rather than Jira's internal transition id and makes the lookup round trip itself — and
+  when the status is not reachable from where the issue currently sits, the error lists the
+  ones that are, because "no" on its own is a useless answer.</p>
+
+  <p class="repos">
+    <a href="https://github.com/evansnicholasa/jira-cli">jira-cli</a>
+    — single file, tested in CI on every push
   </p>
 </div>
 
