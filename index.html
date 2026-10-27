@@ -141,10 +141,12 @@
   I work across UI, REST and SOAP APIs, mobile, databases and asynchronous messaging.</p>
 
   <p>I've led four quality engineers on a cross-platform application serving more than five
-  million users, owned the risk-based regression call during production releases, and built a
-  reusable C#/.NET API automation framework containerized for pipeline use.</p>
+  million users, directed onshore, nearshore and offshore quality engineers, was my team's
+  release quality gate on production releases, and designed a reusable C#/.NET API automation
+  framework, containerized, whose tests ran in a GitHub Actions pipeline.</p>
 
-  <p>I've used GitHub Copilot for three years writing automation and application code.
+  <p>I've used GitHub Copilot for three years as a force multiplier while writing and
+  debugging automated test cases.
   Alongside that I build with Anthropic Claude Code and OpenAI Codex — and, more usefully
   for a quality engineer, I measure what AI produces.</p>
 </div>
@@ -209,7 +211,8 @@
   that both consume as a git submodule — one source of truth rather than copies that drift.
   Two Chrome extensions sit alongside them: one scrapes a posting and files it, the other
   marks an existing application closed in a single click. The whole thing runs on a
-  self-hosted Debian machine, with work tracked in Jira.</p>
+  self-hosted Debian machine on my local network with a nightly backup to Backblaze, with work
+  tracked in Jira.</p>
 
   <p class="repos">
     <a href="https://github.com/nevans-job-tracker/job-tracker-backend">backend</a> &middot;
@@ -270,7 +273,7 @@
 <h2>Experience</h2>
 
 <div class="employer">
-  <strong>NTT DATA</strong> — Senior Quality Engineer / Quality Engineering Consultant, since October 2018
+  <strong>NTT DATA</strong> — Senior Quality Engineer / Quality Engineering Consultant, October 2018 – September 2026
   <p>Every engagement below was delivered as an NTT DATA consultant. A new client, domain and
   technology stack every year or two.</p>
 </div>
@@ -282,26 +285,43 @@
   </div>
   <p class="job-meta">Senior Quality Engineer &middot; Healthcare</p>
   <ul>
-    <li>Built a reusable .NET API automation framework in C# with Reqnroll and RestSharp —
-      shared setup, request and response helpers, assertion utilities, and a Dockerfile for
-      pipeline integration</li>
-    <li>UI and REST API automation for outpatient registration workflows</li>
-    <li>Reusable interaction and assertion methods in Swift; automated iPad tests</li>
+    <li>Chose the API test tooling and designed a .NET API automation framework in C# with
+      Reqnroll BDD, RestSharp, shared API libraries, assertion utilities and a Dockerfile,
+      running its tests in a GitHub Actions pipeline on pull requests</li>
+    <li>Directed offshore QEs in India, setting priorities and reviewing their test cases and
+      pull requests</li>
+    <li>Designed and automated UI and REST API test cases in C# for critical outpatient
+      registration workflows</li>
+    <li>Automated iPad UI tests with Swift and XCUITest, building reusable interaction and
+      assertion methods</li>
   </ul>
 </div>
 
 <div class="job">
   <div class="job-head">
-    <span class="job-title">Campbell's — Azure Migration</span>
+    <span class="job-title">Campbell's — Azure Private Network Migration</span>
     <span class="job-dates">Jan 2025 – Apr 2025</span>
   </div>
   <p class="job-meta">Senior Quality Engineer &middot; Consumer goods</p>
   <ul>
-    <li>Refactored and stabilized TypeScript Playwright tests and expanded automated coverage</li>
-    <li>Ported C#-embedded database queries to MySQL to validate data returned by APIs, rather
-      than trusting response bodies</li>
-    <li>Found environment, configuration and integration defects during the migration, and
-      partnered with DevOps on migration blockers</li>
+    <li>Refactored and stabilized flaky TypeScript Playwright API tests, expanding coverage to
+      over 90%</li>
+    <li>Ported C#-embedded database queries to MySQL to validate data returned by APIs</li>
+    <li>Identified environment, configuration and integration defects as microservices moved
+      to private Azure networking, and worked with DevOps to clear migration blockers</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <span class="job-title">NTT DATA Bench</span>
+    <span class="job-dates">Dec 2024 – Jan 2025</span>
+  </div>
+  <p class="job-meta">Senior Quality Engineer</p>
+  <ul>
+    <li>Refactored the structure of an internal prototype Java Playwright framework meant as a
+      template for new projects, separating context management, API libraries and
+      utilities</li>
   </ul>
 </div>
 
@@ -312,12 +332,24 @@
   </div>
   <p class="job-meta">Lead Quality Engineer &middot; Utilities</p>
   <ul>
-    <li>Led four quality engineers in an Agile and Scrum environment across manual and
-      automated testing of a cross-platform application serving more than five million users</li>
-    <li>Created and executed end-to-end test cases spanning UI, REST and SOAP APIs,
+    <li>Led and mentored 4 onshore and nearshore quality engineers in an Agile and Scrum
+      environment, delivering manual testing and Java test automation for a cross-platform
+      application serving more than five million users</li>
+    <li>Helped QEs get started with test automation, and coached them on test design and
+      defect triage</li>
+    <li>Refactored the Java test automation framework to read test data from JSON instead of
+      Excel spreadsheets, making data changes visible in pull requests and reducing test
+      failures</li>
+    <li>Created and executed end-to-end test cases covering UI, REST and SOAP APIs,
       databases, and desktop and mobile browsers on physical phones and tablets</li>
-    <li>Mentored the team on test design, automation, execution and defect triage</li>
-    <li>Supported production releases through risk-based regression and rapid defect triage</li>
+    <li>Release quality gate for my team on production releases, with risk-based regression
+      and defect triage</li>
+    <li>Triaged UAT defects, supported go-live, and analyzed production issues and emergency
+      fixes</li>
+    <li>Reported UI and API test counts and automation coverage at each sprint review, and
+      raised release risk</li>
+    <li>Worked with product owners on requirement questions and acceptance criteria during
+      refinements</li>
   </ul>
 </div>
 
@@ -328,12 +360,18 @@
   </div>
   <p class="job-meta">Developer and Lead Quality Engineer &middot; Logistics</p>
   <ul>
-    <li>Led manual and automation testing of a UPS-to-vendor integration</li>
-    <li>Built Spring Boot microservices exposing REST APIs, data-access components, Oracle
-      stored procedures and unit tests</li>
-    <li>Root-cause analysis and fixes across the API and database layers</li>
-    <li>Automated REST and asynchronous messaging integration tests over JMS queues and
-      publish/subscribe, using Java, Cucumber and Citrus</li>
+    <li>Led manual and automation testing of integration between UPS systems and a vendor
+      application, and helped QEs on the project get started with test automation</li>
+    <li>Developed Spring Boot microservices exposing REST APIs, along with data-access
+      components, Oracle PL/SQL stored procedures, and JUnit unit tests held to an 80% minimum
+      coverage quality gate</li>
+    <li>Built the aggregator in a Java service that consumed JSON flight-scheduling messages
+      from ActiveMQ through Apache Camel routes, merging them under rules for timing and which
+      messages to combine</li>
+    <li>Diagnosed defects through root-cause analysis and implemented fixes across API and
+      database layers</li>
+    <li>Automated REST API and asynchronous messaging integration tests for JMS queues and
+      publish/subscribe topics using Java and Citrus</li>
   </ul>
 </div>
 
@@ -347,8 +385,8 @@
     <li>Automated UI, REST API and AMQ/WMQ messaging workflows for jumpseat scheduling, crew
       messaging and parameter management, using Java, Selenium WebDriver, REST Assured and
       Cucumber</li>
-    <li>End-to-end coverage across distributed aviation systems, including validation of
-      message ordering and service integrations</li>
+    <li>Designed and maintained end-to-end test coverage across distributed aviation systems,
+      validating message ordering, service integrations and application workflows</li>
   </ul>
 </div>
 
@@ -359,21 +397,23 @@
   <dd>Java &middot; C# &middot; TypeScript and JavaScript &middot; Swift &middot; SQL</dd>
 
   <dt>Automation</dt>
-  <dd>Playwright &middot; Selenium WebDriver &middot; REST Assured &middot; RestSharp &middot;
-      Cucumber &middot; Reqnroll &middot; Citrus &middot; TestNG</dd>
+  <dd>Playwright &middot; Selenium WebDriver &middot; XCUITest &middot; REST Assured &middot;
+      RestSharp &middot; Cucumber &middot; Citrus &middot; Reqnroll &middot; Gherkin &middot;
+      TestNG &middot; JUnit &middot; NUnit &middot; Page Object Model</dd>
 
   <dt>Testing</dt>
   <dd>UI &middot; REST and SOAP API &middot; mobile and iOS &middot; integration &middot;
-      end-to-end &middot; regression &middot; functional &middot; exploratory &middot;
-      database &middot; cross-browser &middot; unit &middot; asynchronous messaging</dd>
+      end-to-end &middot; regression &middot; smoke &middot; functional &middot; exploratory
+      &middot; cross-browser &middot; unit &middot; asynchronous messaging &middot; data
+      validation &middot; defect triage &middot; root-cause analysis</dd>
 
   <dt>Platforms and CI/CD</dt>
-  <dd>Spring Boot &middot; .NET &middot; Azure DevOps &middot; Jenkins &middot; OpenShift
-      &middot; GCP &middot; Docker &middot; Maven &middot; Git &middot; GitHub &middot;
-      Jira &middot; Postman</dd>
+  <dd>GitHub Actions &middot; Jenkins &middot; Azure DevOps &middot; Docker &middot; Git
+      &middot; GitHub &middot; Spring Boot &middot; .NET &middot; OpenShift &middot; GCP
+      &middot; Maven &middot; Jira &middot; Postman &middot; Swagger</dd>
 
   <dt>AI-assisted development</dt>
-  <dd>GitHub Copilot &middot; Anthropic Claude Code (skills and subagents) &middot; OpenAI Codex</dd>
+  <dd>GitHub Copilot &middot; Anthropic Claude Code (skills and subagents) &middot; OpenAI Codex &middot; Cursor</dd>
 </dl>
 
 <h2>Education and certifications</h2>
