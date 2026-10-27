@@ -221,7 +221,7 @@
 </div>
 
 <div class="project">
-  <h3>jira-cli — replacing a metered integration with 330 lines</h3>
+  <h3>Jira Command-Line Client — replacing a metered integration with 330 lines</h3>
   <p class="kicker">A small tool that removed a subscription &middot; Python, zero dependencies</p>
 
   <p>I was driving the Jira board for that project through Atlassian's hosted Rovo MCP server.
@@ -229,8 +229,8 @@
   keeping one integration alive meant paying for a tier I had no other use for. The REST API
   underneath it is available on every plan, unmetered.</p>
 
-  <p>So I wrote about 330 lines of Python that talks to it directly: a single file, no
-  dependencies, any Python 3.9 or later. Two things turned out better rather than merely
+  <p>So I built, with Claude Code, about 330 lines of Python that talks to it directly: a
+  single file, no dependencies, any Python 3.9 or later. Two things turned out better rather than merely
   cheaper. It runs anywhere there is a shell — a terminal, an editor, a CI job, more than one
   AI coding agent — where an MCP server only works where it has been configured. And it can be
   read, tested and changed, which a hosted service cannot.</p>
@@ -244,8 +244,27 @@
 
   <p class="repos">
     <a href="https://github.com/evansnicholasa/jira-cli">jira-cli</a>
-    — single file, tested in CI on every push
+    — the repository, with unit tests run in CI on every push
   </p>
+</div>
+
+<div class="project">
+  <h3>Job Search Workflow — a manager agent and its subagents</h3>
+  <p class="kicker">Built with Anthropic Claude Code &middot; skills, subagents, a job board that refreshes itself</p>
+
+  <p>Applying for a job is a set of repeatable tasks: check whether a posting is the
+  employer's own, judge whether the role fits, tailor a résumé, draft a cover letter, finalize
+  it. I built a Claude Code skill for each one, and a manager agent that hands each step to a
+  subagent running the matching skill and collects what comes back.</p>
+
+  <p>The manager keeps a small state file for every job, and it is the only thing I talk to.
+  When a subagent has a question or needs a decision, it goes back to the manager, which puts
+  it on an HTML job board I keep open in a browser. The board refreshes itself and sorts jobs
+  into waiting on me, agents working and finished, so I can see what needs me without
+  scrolling through a chat. I can hand it several postings at once and each one moves through
+  the steps on its own.</p>
+
+  <p>Nothing is applied for, published or sent without my explicit approval at that step.</p>
 </div>
 
 <h2>Experience</h2>
@@ -276,7 +295,7 @@
     <span class="job-title">Campbell's — Azure Migration</span>
     <span class="job-dates">Jan 2025 – Apr 2025</span>
   </div>
-  <p class="job-meta">Quality Engineer &middot; Consumer goods</p>
+  <p class="job-meta">Senior Quality Engineer &middot; Consumer goods</p>
   <ul>
     <li>Refactored and stabilized TypeScript Playwright tests and expanded automated coverage</li>
     <li>Ported C#-embedded database queries to MySQL to validate data returned by APIs, rather
@@ -295,8 +314,8 @@
   <ul>
     <li>Led four quality engineers in an Agile and Scrum environment across manual and
       automated testing of a cross-platform application serving more than five million users</li>
-    <li>Owned end-to-end test plans spanning UI, REST and SOAP APIs, databases, browsers,
-      platforms and devices</li>
+    <li>Created and executed end-to-end test cases spanning UI, REST and SOAP APIs,
+      databases, and desktop and mobile browsers on physical phones and tablets</li>
     <li>Mentored the team on test design, automation, execution and defect triage</li>
     <li>Supported production releases through risk-based regression and rapid defect triage</li>
   </ul>
@@ -354,7 +373,7 @@
       Jira &middot; Postman</dd>
 
   <dt>AI-assisted development</dt>
-  <dd>GitHub Copilot &middot; Anthropic Claude Code &middot; OpenAI Codex</dd>
+  <dd>GitHub Copilot &middot; Anthropic Claude Code (skills and subagents) &middot; OpenAI Codex</dd>
 </dl>
 
 <h2>Education and certifications</h2>
