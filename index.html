@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nick Evans — Senior Quality Engineer</title>
+<title>Nick Evans, Senior Quality Engineer</title>
 <meta name="description" content="Senior Quality Engineer in Ann Arbor, Michigan. Nearly eight years across healthcare, utilities, consumer goods and logistics.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>">
 <style>
@@ -136,71 +136,71 @@
 </header>
 
 <div class="lede">
-  <p>Nearly eight years in quality engineering, all of it consulting for NTT DATA — which has
+  <p>Nearly eight years in quality engineering, all of it consulting for NTT DATA, which has
   put me in a new domain every year or two: healthcare, utilities, consumer goods, logistics.
-  I work across UI, REST and SOAP APIs, mobile, databases and asynchronous messaging.</p>
+  I have automated React and Angular UI, API, integration and mobile testing in object-oriented
+  Java, C#, TypeScript and Swift, and have worked across REST and SOAP APIs, databases and
+  asynchronous messaging.</p>
 
-  <p>I've led four quality engineers on a cross-platform application serving more than five
-  million users, directed onshore, nearshore and offshore quality engineers, was my team's
-  release quality gate on production releases, and designed a reusable C#/.NET API automation
-  framework, containerized, whose tests ran in a GitHub Actions pipeline.</p>
+  <p>I've led and mentored four quality engineers on a cross-platform application serving more
+  than five million users, directed onshore, nearshore and offshore quality engineers,
+  reviewing their test cases and pull requests, was my team's release quality gate on
+  production releases, and designed a containerized .NET API framework whose tests ran in a
+  GitHub Actions pipeline.</p>
 
-  <p>I've used GitHub Copilot for three years as a force multiplier while writing and
-  debugging automated test cases.
-  Alongside that I build with Anthropic Claude Code and OpenAI Codex — and, more usefully
-  for a quality engineer, I measure what AI produces.</p>
+  <p>I've used GitHub Copilot Plugin for three years as a force multiplier while writing and
+  debugging automated test cases. I also build with Anthropic Claude Code and OpenAI Codex,
+  and I published a measurement of LLM-assisted failure triage against a deterministic
+  baseline.</p>
 </div>
 
 <h2>Selected work</h2>
 
 <div class="project">
-  <h3>Does an LLM beat a simple baseline at triaging test failures?</h3>
-  <p class="kicker">Measured, not assumed &middot; TypeScript, Playwright, Python</p>
+  <h3>AI vs Baseline Testing Study: LLM-assisted failure triage</h3>
+  <p class="kicker">A published measurement &middot; TypeScript, Playwright, Python</p>
 
-  <p>A test goes red overnight. Someone has to decide whether the product is broken, the test
-  is broken, the environment is broken, or it is simply flaky. That call is most of what
-  triage is, and getting it wrong in the direction of blaming the product is how a team stops
-  trusting its own suite.</p>
+  <p>A test fails overnight. Someone has to decide whether the product, the test or the
+  environment is at fault, or whether the test is simply flaky.</p>
 
-  <p>I wanted to know whether a language model does that better than something simple. So I
-  built the measuring instrument first: a deliberately defective application and API with
-  twenty-two cataloged defects and four injectable flakes, each carrying the classification a
-  correct triage system should assign. Every failure it produces has a known right answer.
-  That repository contains no AI at all, deliberately — an instrument that shares components
-  with the thing it measures is not worth much.</p>
+  <p>I wanted to know whether a language model does that better than a simple baseline, so I
+  first built a test application: a deliberately defective application and API with
+  twenty-two cataloged defects and four injectable flakes. Each defect carries the
+  classification a correct triage system should assign, so every failure it produces has a
+  known right answer. That repository contains no AI, so the application shares no components
+  with the classifiers being measured.</p>
 
   <div class="result">
-    <p><strong>The model lost.</strong> Deterministic clustering — group failures by their
-    error evidence, label each group by what it has historically been — scores 73.2% macro F1
-    at zero cost and with no dependencies. Adding <code>claude-opus-5</code> on the ambiguous
-    cases dropped that to 61.3% and cost $0.31 a run.</p>
-    <p>The whole gap is one behavior. The model finds exactly the same real broken tests the
-    clustering finds — identical recall — then labels twenty more failures "broken test" that
-    were not. Five of those were genuine product bugs.</p>
+    <p><strong>Result:</strong> deterministic clustering (grouping failures by their error
+    evidence and labeling each group by what it has historically been) scored 73.2% macro F1
+    at no cost and with no dependencies. Adding Claude Opus 5 (<code>claude-opus-5</code>) on
+    the ambiguous cases lowered that to 61.3% and cost $0.31 a run.</p>
+    <p>The difference comes from one behavior. The model finds the same real broken tests the
+    clustering finds, with identical recall, then labels twenty more failures "broken test"
+    that were not. Five of those were genuine product bugs.</p>
   </div>
 
-  <p>It was also weakest on the deliberately ambiguous cases, which is precisely where the
-  argument for reaching for a model is strongest. Two cross-run frequency hypotheses that
-  sounded obviously right contributed nothing, measured three separate ways.</p>
+  <p>The model was also weakest on the deliberately ambiguous cases, where a model would be
+  expected to help most. Two cross-run frequency hypotheses that seemed reasonable
+  contributed nothing, measured three separate ways.</p>
 
   <p>The labeled corpus is published as a checksummed release and cited by tag, so the
-  numbers can be reproduced rather than taken on faith — the deterministic baseline runs from
-  a clean checkout with one command and no credentials. An earlier version of this result was
-  measured against a corpus that was later regenerated, which quietly made the published
-  figure unverifiable. Fixing that honestly is documented in the repository alongside the
-  superseded numbers.</p>
+  numbers can be reproduced. The deterministic baseline runs from a clean checkout with one
+  command and no credentials. An earlier version of this result was measured against a corpus
+  that was later regenerated, which made the published figure unverifiable. The repository
+  documents the fix alongside the superseded numbers.</p>
 
   <p class="repos">
     <a href="https://github.com/nevans-ai-qa-claude/ai-qa-proving-ground">ai-qa-proving-ground</a>
-    — the measuring instrument &middot;
+    (the defective application and its corpus) &middot;
     <a href="https://github.com/nevans-ai-qa-claude/ai-qa-failure-triage">ai-qa-failure-triage</a>
-    — the classifier and the scoring
+    (the classifier and the scoring)
   </p>
 </div>
 
 <div class="project">
-  <h3>Job Tracker — full-stack, self-hosted</h3>
-  <p class="kicker">A working application, not a demo &middot; FastAPI, MariaDB, React</p>
+  <h3>Job Tracker: full-stack and self-hosted</h3>
+  <p class="kicker">Built with Anthropic Claude Code &middot; FastAPI, MariaDB, React</p>
 
   <p>Tracks job applications end to end: company, role, source, status, salary range, dates,
   notes, next action and contacts. A FastAPI service in Python with SQLAlchemy models and
@@ -208,8 +208,8 @@
   single-page front end built in Vite.</p>
 
   <p>Two repositories deployed independently, with requirements and architecture in a third
-  that both consume as a git submodule — one source of truth rather than copies that drift.
-  Two Chrome extensions sit alongside them: one scrapes a posting and files it, the other
+  that both consume as a git submodule, so there is one copy rather than several that can
+  drift. Two Chrome extensions sit alongside them: one scrapes a posting and files it, the other
   marks an existing application closed in a single click. The whole thing runs on a
   self-hosted Debian machine on my local network with a nightly backup to Backblaze, with work
   tracked in Jira.</p>
@@ -224,35 +224,33 @@
 </div>
 
 <div class="project">
-  <h3>Jira Command-Line Client — replacing a metered integration with 330 lines</h3>
-  <p class="kicker">A small tool that removed a subscription &middot; Python, zero dependencies</p>
+  <h3>Jira Command-Line Client: replacing a metered integration with a small script</h3>
+  <p class="kicker">Built with Anthropic Claude Code &middot; Python, no dependencies</p>
 
-  <p>I was driving the Jira board for that project through Atlassian's hosted Rovo MCP server.
-  It worked, but it meters against Rovo credits and is not offered on the Free plan — so
-  keeping one integration alive meant paying for a tier I had no other use for. The REST API
-  underneath it is available on every plan, unmetered.</p>
+  <p>I was driving the Jira board for the Job Tracker project through Atlassian's hosted Rovo
+  MCP server. It worked, but it meters against Rovo credits and is not offered on the Free
+  plan, so keeping one integration alive meant paying for a tier I had no other use for. The
+  REST API underneath it is available on every plan, unmetered.</p>
 
-  <p>So I built, with Claude Code, about 330 lines of Python that talks to it directly: a
-  single file, no dependencies, any Python 3.9 or later. Two things turned out better rather than merely
-  cheaper. It runs anywhere there is a shell — a terminal, an editor, a CI job, more than one
-  AI coding agent — where an MCP server only works where it has been configured. And it can be
+  <p>So I built, with Claude Code, a short Python program that talks to it directly: a
+  single file, no dependencies, any Python 3.9 or later. It also turned out better in two
+  ways. It runs anywhere there is a shell (a terminal, an editor, a CI job, more than one AI
+  coding agent), whereas an MCP server only works where it has been configured. And it can be
   read, tested and changed, which a hosted service cannot.</p>
 
-  <p>Having no dependencies is a working decision rather than an aesthetic one: a tool you
-  reach for every few weeks is one whose dependencies rot between uses, and the first run after
-  six months should not begin with a resolver error. <code>transition</code> takes a status
-  name rather than Jira's internal transition id and makes the lookup round trip itself — and
-  when the status is not reachable from where the issue currently sits, the error lists the
-  ones that are, because "no" on its own is a useless answer.</p>
+  <p>I chose no dependencies because a tool I use every few weeks can break between uses if
+  its dependencies change. <code>transition</code> takes a status name rather than Jira's
+  internal transition id and makes the lookup round trip itself. When the status is not
+  reachable from where the issue currently sits, the error lists the ones that are.</p>
 
   <p class="repos">
-    <a href="https://github.com/evansnicholasa/jira-cli">jira-cli</a>
-    — the repository, with unit tests run in CI on every push
+    <a href="https://github.com/evansnicholasa/jira-cli">Jira Command-Line Client on GitHub</a>:
+    the repository, with unit tests run in GitHub Actions
   </p>
 </div>
 
 <div class="project">
-  <h3>Job Search Workflow — a manager agent and its subagents</h3>
+  <h3>Job Search Workflow: a manager agent and its subagents</h3>
   <p class="kicker">Built with Anthropic Claude Code &middot; skills, subagents, a job board that refreshes itself</p>
 
   <p>Applying for a job is a set of repeatable tasks: check whether a posting is the
@@ -271,27 +269,27 @@
 
   <p class="repos">
     <a href="https://github.com/evansnicholasa/job-application-workflow">job-application-workflow</a>
-    — the manager, subagents, skills and board, with a demo and no personal data
+    : the manager, subagents, skills and board, with a demo and no personal data
   </p>
 </div>
 
 <h2>Experience</h2>
 
 <div class="employer">
-  <strong>NTT DATA</strong> — Senior Quality Engineer / Quality Engineering Consultant, October 2018 – September 2026
-  <p>Every engagement below was delivered as an NTT DATA consultant. A new client, domain and
-  technology stack every year or two.</p>
+  <strong>NTT DATA</strong>: Senior Quality Engineer / Quality Engineering Consultant, Oct 2018 – Sep 2026
+  <p>Every engagement below was delivered as an NTT DATA consultant, with a new client, domain
+  and technology stack every year or two.</p>
 </div>
 
 <div class="job">
   <div class="job-head">
-    <span class="job-title">HCA — Outpatient Express Registration</span>
+    <span class="job-title">HCA: Outpatient Express Registration</span>
     <span class="job-dates">Apr 2025 – Jul 2026</span>
   </div>
   <p class="job-meta">Senior Quality Engineer &middot; Healthcare</p>
   <ul>
     <li>Chose the API test tooling and designed a .NET API automation framework in C# with
-      Reqnroll BDD, RestSharp, shared API libraries, assertion utilities and a Dockerfile,
+      Reqnroll BDD, RestSharp, shared API libraries, assertion utilities, and a Dockerfile,
       running its tests in a GitHub Actions pipeline on pull requests</li>
     <li>Directed offshore QEs in India, setting priorities and reviewing their test cases and
       pull requests</li>
@@ -304,7 +302,7 @@
 
 <div class="job">
   <div class="job-head">
-    <span class="job-title">Campbell's — Azure Private Network Migration</span>
+    <span class="job-title">Campbell's: Azure Private Network Migration</span>
     <span class="job-dates">Jan 2025 – Apr 2025</span>
   </div>
   <p class="job-meta">Senior Quality Engineer &middot; Consumer goods</p>
@@ -312,7 +310,7 @@
     <li>Refactored and stabilized flaky TypeScript Playwright API tests, expanding coverage to
       over 90%</li>
     <li>Ported C#-embedded database queries to MySQL to validate data returned by APIs</li>
-    <li>Identified environment, configuration and integration defects as microservices moved
+    <li>Identified environment, configuration, and integration defects as microservices moved
       to private Azure networking, and worked with DevOps to clear migration blockers</li>
   </ul>
 </div>
@@ -325,27 +323,27 @@
   <p class="job-meta">Senior Quality Engineer</p>
   <ul>
     <li>Refactored the structure of an internal prototype Java Playwright framework meant as a
-      template for new projects, separating context management, API libraries and
+      template for new projects, separating context management, API libraries, and
       utilities</li>
   </ul>
 </div>
 
 <div class="job">
   <div class="job-head">
-    <span class="job-title">SoCalGas — My Account</span>
+    <span class="job-title">SoCalGas: My Account</span>
     <span class="job-dates">Oct 2023 – Dec 2024</span>
   </div>
   <p class="job-meta">Lead Quality Engineer &middot; Utilities</p>
   <ul>
-    <li>Led and mentored 4 onshore and nearshore quality engineers in an Agile and Scrum
+    <li>Led and mentored 4 onshore and nearshore quality engineers in an Agile/Scrum
       environment, delivering manual testing and Java test automation for a cross-platform
-      application serving more than five million users</li>
+      application serving 5M+ users</li>
     <li>Helped QEs get started with test automation, and coached them on test design and
       defect triage</li>
     <li>Refactored the Java test automation framework to read test data from JSON instead of
       Excel spreadsheets, making data changes visible in pull requests and reducing test
       failures</li>
-    <li>Created and executed end-to-end test cases covering UI, REST and SOAP APIs,
+    <li>Created and executed end-to-end test cases covering UI, REST/SOAP APIs,
       databases, and desktop and mobile browsers on physical phones and tablets</li>
     <li>Release quality gate for my team on production releases, with risk-based regression
       and defect triage</li>
@@ -360,7 +358,7 @@
 
 <div class="job">
   <div class="job-head">
-    <span class="job-title">UPS — FTC System Integration</span>
+    <span class="job-title">UPS: FTC System Integration</span>
     <span class="job-dates">Apr 2022 – Oct 2023</span>
   </div>
   <p class="job-meta">Developer and Lead Quality Engineer &middot; Logistics</p>
@@ -382,16 +380,16 @@
 
 <div class="job">
   <div class="job-head">
-    <span class="job-title">UPS — Jumpseat and Crew Systems</span>
+    <span class="job-title">UPS: Jumpseat and Crew Systems</span>
     <span class="job-dates">Nov 2018 – Apr 2022</span>
   </div>
   <p class="job-meta">Test Automation Engineer &middot; Aviation and logistics</p>
   <ul>
-    <li>Automated UI, REST API and AMQ/WMQ messaging workflows for jumpseat scheduling, crew
-      messaging and parameter management, using Java, Selenium WebDriver, REST Assured and
+    <li>Automated UI, REST API, and AMQ/WMQ messaging workflows for jumpseat scheduling, crew
+      messaging, and parameter-management services using Java, Selenium WebDriver, REST Assured, and
       Cucumber</li>
     <li>Designed and maintained end-to-end test coverage across distributed aviation systems,
-      validating message ordering, service integrations and application workflows</li>
+      validating message ordering, service integrations, and application workflows</li>
   </ul>
 </div>
 
@@ -399,7 +397,7 @@
 
 <dl class="skills">
   <dt>Languages</dt>
-  <dd>Java &middot; C# &middot; TypeScript and JavaScript &middot; Swift &middot; SQL</dd>
+  <dd>Java &middot; C# &middot; TypeScript/JavaScript &middot; Swift &middot; SQL (MySQL, Oracle PL/SQL, SQL Server)</dd>
 
   <dt>Automation</dt>
   <dd>Playwright &middot; Selenium WebDriver &middot; XCUITest &middot; REST Assured &middot;
@@ -407,28 +405,26 @@
       TestNG &middot; JUnit &middot; NUnit &middot; Page Object Model</dd>
 
   <dt>Testing</dt>
-  <dd>UI &middot; REST and SOAP API &middot; mobile and iOS &middot; integration &middot;
+  <dd>UI &middot; REST/SOAP API &middot; mobile/iOS &middot; integration &middot;
       end-to-end &middot; regression &middot; smoke &middot; functional &middot; exploratory
-      &middot; cross-browser &middot; unit &middot; asynchronous messaging &middot; data
+      &middot; cross-browser &middot; unit testing &middot; asynchronous messaging &middot; data
       validation &middot; defect triage &middot; root-cause analysis</dd>
 
-  <dt>Platforms and CI/CD</dt>
+  <dt>Platforms, CI/CD and Tools</dt>
   <dd>GitHub Actions &middot; Jenkins &middot; Azure DevOps &middot; Docker &middot; Git
       &middot; GitHub &middot; Spring Boot &middot; .NET &middot; OpenShift &middot; GCP
-      &middot; Maven &middot; Jira &middot; Postman &middot; Swagger</dd>
-
-  <dt>AI-assisted development</dt>
-  <dd>GitHub Copilot &middot; Anthropic Claude Code (skills and subagents) &middot; OpenAI Codex &middot; Cursor</dd>
+      &middot; Maven &middot; Jira &middot; Postman &middot; Swagger &middot; GitHub Copilot
+      Plugin &middot; Claude Code &middot; Codex &middot; Cursor</dd>
 </dl>
 
 <h2>Education and certifications</h2>
 
-<p>B.S. Computer Science — Eastern Michigan University, Ypsilanti, Michigan</p>
+<p>Bachelor of Science in Computer Science, Eastern Michigan University, Ypsilanti, MI</p>
 
-<p>ISTQB Certified Tester, Foundation Level (CTFL) — ASTQB, September 2026,
-syllabus v4.0 —
-<a href="https://atsqa.org/certified-testers/profile/dd2d033186b044e18825d3f15924ba77">verify
-in the AT*SQA registry</a></p>
+<p>ISTQB Certified Tester Foundation Level (CTFL), ASTQB, September 2026,
+syllabus v4.0
+(<a href="https://atsqa.org/certified-testers/profile/dd2d033186b044e18825d3f15924ba77">verify
+in the AT*SQA registry</a>)</p>
 
 <footer>
   <p>
